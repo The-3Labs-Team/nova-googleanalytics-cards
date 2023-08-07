@@ -25,8 +25,7 @@ class GoogleAnalyticsLineChart extends Trend
         string $metrics,
         bool $dimensionSortByDesc = false,
         bool $metricSortByDesc = false
-    ): array
-    {
+    ): array {
         $startDate = Carbon::now()->subDays($numberOfDays);
         $endDate = Carbon::now();
         $orderBy = [
@@ -67,7 +66,6 @@ class GoogleAnalyticsLineChart extends Trend
         ];
     }
 
-
     /**
      * Calculate the value of the metric.
      *
@@ -83,12 +81,11 @@ class GoogleAnalyticsLineChart extends Trend
         } else {
             $format = '0%';
             $total = $total / $request->range;
-        };
-
+        }
 
         return $this->result($total) // total values
-        ->trend($data) // dates => value
-        ->format($format);
+            ->trend($data) // dates => value
+            ->format($format);
     }
 
     /**

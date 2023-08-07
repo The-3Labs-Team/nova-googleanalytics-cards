@@ -70,7 +70,7 @@ class GoogleAnalyticsCounter extends Value
             $format = '0,0';
         } else {
             $format = '0%';
-        };
+        }
 
         return $this->result($results)->format($format);
     }

@@ -6,8 +6,7 @@ use The3LabsTeam\NovaGoogleAnalyticsCards\Abstract\GoogleAnalyticsLineChart;
 
 class PageViewLineChart extends GoogleAnalyticsLineChart
 {
-
     public $title = 'novaGoogleAnalyticsCards.pageViewsLineChartTitle';
-    protected $metrics = 'screenPageViews';
 
+    protected $metrics = 'screenPageViews';
 }
