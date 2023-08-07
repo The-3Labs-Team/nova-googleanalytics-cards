@@ -10,7 +10,7 @@ use Spatie\Analytics\Facades\Analytics;
 use Spatie\Analytics\OrderBy;
 use Spatie\Analytics\Period;
 
-abstract class GoogleAnalyticsLineChart extends Trend
+class GoogleAnalyticsLineChart extends Trend
 {
     public $name;
 

@@ -8,7 +8,7 @@ use Laravel\Nova\Nova;
 use Spatie\Analytics\Facades\Analytics;
 use Spatie\Analytics\Period;
 
-abstract class GoogleAnalyticsCounter extends Value
+class GoogleAnalyticsCounter extends Value
 {
     public $name;
 

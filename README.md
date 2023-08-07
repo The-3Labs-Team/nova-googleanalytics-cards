@@ -32,11 +32,8 @@ in your `config/analytics.php` file.
 ## Usage
 
 ```php
-use The3LabsTeam\NovaGoogleAnalyticsCards\ActiveUsersCounter;
-use The3LabsTeam\NovaGoogleAnalyticsCards\NewUsersCounter;
-use The3LabsTeam\NovaGoogleAnalyticsCards\PageViewsCounter;
+use The3LabsTeam\NovaGoogleAnalyticsCards\Counter\ActiveUsersCounter;use The3LabsTeam\NovaGoogleAnalyticsCards\Counter\NewUsersCounter;use The3LabsTeam\NovaGoogleAnalyticsCards\Counter\PageViewsCounter;use The3LabsTeam\NovaGoogleAnalyticsCards\LineChart\PageViewLineChart;
 
-use The3LabsTeam\NovaGoogleAnalyticsCards\PageViewLineChart;
 ...
 
 (new ActiveUsersCounter())
@@ -47,8 +44,9 @@ use The3LabsTeam\NovaGoogleAnalyticsCards\PageViewLineChart;
 
 ```
 You can also override the name of cards like this:
+
 ```php
-use The3LabsTeam\NovaGoogleAnalyticsCards\ActiveUsersCounter;
+use The3LabsTeam\NovaGoogleAnalyticsCards\Counter\ActiveUsersCounter;
 ...
 
 (new ActiveUsersCounter(name: 'The name of the card (string)'))
