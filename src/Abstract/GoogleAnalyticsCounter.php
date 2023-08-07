@@ -10,6 +10,8 @@ use Spatie\Analytics\Period;
 
 abstract class GoogleAnalyticsCounter extends Value
 {
+    public $name;
+
     public function __construct(string $name = null)
     {
         parent::__construct();
@@ -53,5 +55,23 @@ abstract class GoogleAnalyticsCounter extends Value
     public function cacheFor()
     {
         return now()->addMinutes(config('nova-google-analytics-cards.cache_ttl'));
+    }
+
+    /**
+     * Calculate the value of the metric.
+     *
+     * @return mixed
+     */
+    public function calculate(NovaRequest $request)
+    {
+        $results = $this->getData($request, $this->metrics);
+
+        if (is_int($results)) {
+            $format = '0,0';
+        } else {
+            $format = '0%';
+        };
+
+        return $this->result($results)->format($format);
     }
 }

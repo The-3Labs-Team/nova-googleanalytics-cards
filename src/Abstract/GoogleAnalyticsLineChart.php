@@ -3,6 +3,7 @@
 namespace The3LabsTeam\NovaGoogleAnalyticsCards\Abstract;
 
 use Carbon\Carbon;
+use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Metrics\Trend;
 use Laravel\Nova\Nova;
 use Spatie\Analytics\Facades\Analytics;
@@ -11,19 +12,26 @@ use Spatie\Analytics\Period;
 
 abstract class GoogleAnalyticsLineChart extends Trend
 {
+    public $name;
+
     public function __construct(string $name = null)
     {
         parent::__construct();
         $this->name = $name ?? __($this->title);
     }
 
-    public function getAnalyticsData(int $numberOfDays, string $metrics): array
+    public function getAnalyticsData(
+        int $numberOfDays,
+        string $metrics,
+        bool $dimensionSortByDesc = false,
+        bool $metricSortByDesc = false
+    ): array
     {
         $startDate = Carbon::now()->subDays($numberOfDays);
         $endDate = Carbon::now();
         $orderBy = [
-            OrderBy::dimension('date', false),
-            OrderBy::metric('screenPageViews', false),
+            OrderBy::dimension('date', $dimensionSortByDesc),
+            OrderBy::metric($metrics, $metricSortByDesc),
         ];
 
         $analyticsData = Analytics::get(
@@ -36,7 +44,7 @@ abstract class GoogleAnalyticsLineChart extends Trend
 
         $formattedData = [];
         foreach ($analyticsData as $data) {
-            $formattedData[$data['date']->isoFormat('YYYY-MM-DD')] = $data['screenPageViews'];
+            $formattedData[$data['date']->isoFormat('YYYY-MM-DD')] = $data[$metrics];
         }
 
         $total = array_sum($formattedData);
@@ -57,6 +65,30 @@ abstract class GoogleAnalyticsLineChart extends Trend
             60 => Nova::__('60 Days'),
             //            90 => Nova::__('90 Days'),
         ];
+    }
+
+
+    /**
+     * Calculate the value of the metric.
+     *
+     * @return mixed
+     */
+    public function calculate(NovaRequest $request)
+    {
+
+        [$total, $data] = $this->getAnalyticsData(numberOfDays: $request->range, metrics: $this->metrics);
+
+        if (is_int($total)) {
+            $format = '0,0';
+        } else {
+            $format = '0%';
+            $total = $total / $request->range;
+        };
+
+
+        return $this->result($total) // total values
+        ->trend($data) // dates => value
+        ->format($format);
     }
 
     /**
