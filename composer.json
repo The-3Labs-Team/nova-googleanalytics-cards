@@ -1,0 +1,80 @@
+{
+    "name": "the-3labs-team/nova-google-analytics-cards",
+    "description": "Google Analytics integration with Nova Metrics",
+    "keywords": [
+        "laravel",
+        "nova",
+        "google-analytics",
+        "analytics",
+        "nova-metrics",
+        "php"
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://nova.laravel.com"
+        }
+    ],
+    "homepage": "https://github.com/The-3Labs-Team/nova-google-analytics-cards",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Stefano Novelli",
+            "email": "murdercode@gmail.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Claudio Emmolo",
+            "email": "claudioemmolo90@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1|^8.2",
+        "outl1ne/nova-translations-loader": "^5.0"
+    },
+    "require-dev": {
+        "laravel/nova": "^4.0",
+        "laravel/pint": "^1.10",
+        "nunomaduro/larastan": "2.0",
+        "orchestra/testbench": "^7.0",
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "The3LabsTeam\\NovaGoogleAnalyticsCards\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "The3LabsTeam\\NovaGoogleAnalyticsCards\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "The3LabsTeam\\NovaGoogleAnalyticsCards\\NovaGoogleAnalyticsCardsServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": true,
+            "pestphp/pest-plugin": true
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "@php vendor/bin/testbench package:discover --ansi"
+        ],
+        "lint": [
+            "./vendor/bin/pint"
+        ],
+        "analyse": [
+            "./vendor/bin/phpstan analyse --memory-limit=2G"
+        ]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
