@@ -14,7 +14,7 @@ final class PageViewsCounter extends GoogleAnalyticsCounter
 {
     public $name;
     protected $title = 'novaGoogleAnalyticsCards.pageViewsCounterTitle';
-    protected $defaultMetrics = 'screenPageViews';
+    protected $metrics = 'screenPageViews';
 
     /**
      * Calculate the value of the metric.
@@ -23,7 +23,7 @@ final class PageViewsCounter extends GoogleAnalyticsCounter
      */
     public function calculate(NovaRequest $request)
     {
-        $results = $this->getData($request, $this->defaultMetrics);
+        $results = $this->getData($request, $this->metrics);
 
         return $this->result($results)->format('000');
     }

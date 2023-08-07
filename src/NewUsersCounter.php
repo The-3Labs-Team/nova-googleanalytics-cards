@@ -13,7 +13,7 @@ final class NewUsersCounter extends GoogleAnalyticsCounter
 {
     public $name;
     public $title = "novaGoogleAnalyticsCards.newUsersCounterTitle";
-    protected $defaultMetrics = 'newUsers';
+    protected $metrics = 'newUsers';
 
 
     /**
@@ -23,7 +23,7 @@ final class NewUsersCounter extends GoogleAnalyticsCounter
      */
     public function calculate(NovaRequest $request)
     {
-        $results = $this->getData($request, $this->defaultMetrics);
+        $results = $this->getData($request, $this->metrics);
 
         return $this->result($results)->format('000');
     }
