@@ -24,7 +24,7 @@ php artisan vendor:publish
 ```
 **and select: `Spatie\Analytics\AnalyticsServiceProvider`.**
 
-**Note:** this package uses [Laravel GitHub](https://github.com/spatie/laravel-analytics), so you need to configure it
+**Note:** this package uses [Laravel Analytics](https://github.com/spatie/laravel-analytics), so you need to configure it
 in your `config/analytics.php` file.
 
 **The config file is documented, so choose the option that best suits your needs.**
