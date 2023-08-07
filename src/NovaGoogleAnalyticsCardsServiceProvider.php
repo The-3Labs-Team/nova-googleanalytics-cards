@@ -14,6 +14,11 @@ class NovaGoogleAnalyticsCardsServiceProvider extends ServiceProvider
 
     public function boot()
     {
+
+        $this->publishes([
+            __DIR__.'/../config/nova-google-analytics-cards.php' => config_path('nova-google-analytics-cards.php'),
+        ], 'config');
+
         $this->loadTranslations(__DIR__.'/../lang', 'nova-google-analytics-cards', true);
     }
 

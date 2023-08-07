@@ -56,6 +56,6 @@ abstract class GoogleAnalyticsCounter extends Value
      */
     public function cacheFor()
     {
-        return now()->addMinutes(5);
+        return now()->addMinutes(config('nova-google-analytics-cards.cache_ttl'));
     }
 }
