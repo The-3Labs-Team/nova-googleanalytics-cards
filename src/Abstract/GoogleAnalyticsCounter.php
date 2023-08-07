@@ -10,11 +10,10 @@ use Spatie\Analytics\Period;
 
 abstract class GoogleAnalyticsCounter extends Value
 {
-    public function __construct(string $name = null, string $metrics = null)
+    public function __construct(string $name = null)
     {
         parent::__construct();
         $this->name = $name ?? __($this->title);
-        $this->metrics = $metrics;
     }
 
     /**

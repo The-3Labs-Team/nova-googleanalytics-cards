@@ -31,14 +31,12 @@
     ],
     "require": {
         "php": "^8.1|^8.2",
-        "outl1ne/nova-translations-loader": "^5.0"
+        "spatie/laravel-analytics": "^5.0.3",
+        "laravel/framework": "^10.0"
     },
     "require-dev": {
         "laravel/nova": "^4.0",
-        "laravel/pint": "^1.10",
-        "nunomaduro/larastan": "2.0",
-        "orchestra/testbench": "^7.0",
-        "phpunit/phpunit": "^9.5"
+        "laravel/pint": "^1.10"
     },
     "autoload": {
         "psr-4": {
@@ -60,14 +58,10 @@
     "config": {
         "sort-packages": true,
         "allow-plugins": {
-            "php-http/discovery": true,
-            "pestphp/pest-plugin": true
+            "php-http/discovery": true
         }
     },
     "scripts": {
-        "post-autoload-dump": [
-            "@php vendor/bin/testbench package:discover --ansi"
-        ],
         "lint": [
             "./vendor/bin/pint"
         ],
