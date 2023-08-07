@@ -72,7 +72,7 @@
             "./vendor/bin/pint"
         ],
         "analyse": [
-            "./vendor/bin/phpstan analyse --memory-limit=2G"
+            "./vendor/bin/phpstan analyse src --memory-limit=2G"
         ]
     },
     "minimum-stability": "dev",
