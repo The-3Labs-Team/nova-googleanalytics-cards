@@ -3,7 +3,6 @@
 namespace The3LabsTeam\NovaGoogleAnalyticsCards\Abstract;
 
 use Carbon\Carbon;
-use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Metrics\Trend;
 use Laravel\Nova\Nova;
 use Spatie\Analytics\Facades\Analytics;
@@ -12,7 +11,6 @@ use Spatie\Analytics\Period;
 
 abstract class GoogleAnalyticsLineChart extends Trend
 {
-
     public function __construct(string $name = null)
     {
         parent::__construct();

@@ -10,7 +10,6 @@ use Spatie\Analytics\Period;
 
 abstract class GoogleAnalyticsCounter extends Value
 {
-
     public function __construct(string $name = null, string $metrics = null)
     {
         parent::__construct();
@@ -20,14 +19,12 @@ abstract class GoogleAnalyticsCounter extends Value
 
     /**
      * Return data from Google Analytics API
-     *
-     * @param NovaRequest $request
-     * @return mixed
      */
     public function getData(NovaRequest $request, string $metrics): mixed
     {
         $analyticsData = Analytics::get(Period::days($request->range), [$metrics]);
         $results = $analyticsData[0][$metrics];
+
         return $results;
     }
 

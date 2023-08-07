@@ -2,20 +2,15 @@
 
 namespace The3LabsTeam\NovaGoogleAnalyticsCards;
 
-use Carbon\Carbon;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Laravel\Nova\Metrics\Trend;
-use Laravel\Nova\Nova;
-use Spatie\Analytics\Facades\Analytics;
-use Spatie\Analytics\OrderBy;
-use Spatie\Analytics\Period;
 use The3LabsTeam\NovaGoogleAnalyticsCards\Abstract\GoogleAnalyticsLineChart;
-
 
 class PageViewLineChart extends GoogleAnalyticsLineChart
 {
     public $name;
+
     public $title = 'novaGoogleAnalyticsCards.pageViewsLineChartTitle';
+
     protected $metrics = 'screenPageViews';
 
     /**
