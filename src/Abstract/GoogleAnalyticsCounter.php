@@ -69,7 +69,7 @@ class GoogleAnalyticsCounter extends Value
         if (is_int($results)) {
             $format = '0,0';
         } else {
-            $format = '0%';
+            $format = '0.00%';
         };
 
         return $this->result($results)->format($format);

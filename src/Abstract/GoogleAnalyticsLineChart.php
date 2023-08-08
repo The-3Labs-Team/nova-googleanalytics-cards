@@ -81,7 +81,7 @@ class GoogleAnalyticsLineChart extends Trend
         if (is_int($total)) {
             $format = '0,0';
         } else {
-            $format = '0%';
+            $format = '0.00%';
             $total = $total / $request->range;
         };
 
