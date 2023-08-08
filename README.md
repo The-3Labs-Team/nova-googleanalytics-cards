@@ -16,7 +16,7 @@ Stay on top of your website's performance with the Google Analytics Insights Pac
 
 You can install the package via composer:
 ```bash
-composer require the-3labs-team/google-analytics-cards
+composer require the-3labs-team/nova-google-analytics-cards
 ```
 
 You can publish the config file with:
