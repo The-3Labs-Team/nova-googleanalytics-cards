@@ -6,7 +6,8 @@ alt="Logo Nova Google Analytics Cards by The3LabsTeam"></p>
 
 Stay on top of your website's performance with the Google Analytics Insights Package for Laravel Nova. This powerful integration empowers you to seamlessly integrate Google Analytics data directly into your Nova dashboard, offering you a comprehensive and real-time overview of your website's key metrics.
 
-## Requirements
+
+## Requirements
 
 * php >= 8.1
 * laravel/framework >= 10.0
