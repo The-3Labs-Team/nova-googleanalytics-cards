@@ -2,5 +2,8 @@
     "novaGoogleAnalyticsCards.newUsersCounterTitle" : "Google Analytics™ - Nuovi Visitatori",
     "novaGoogleAnalyticsCards.activeUsersCounterTitle": "Google Analytics™ - Visitatori Attivi",
     "novaGoogleAnalyticsCards.pageViewsCounterTitle": "Google Analytics™ - Visualizzazioni Pagina",
-    "novaGoogleAnalyticsCards.pageViewsLineChartTitle": "Google Analytics™ - Visualizzazioni pagina fino ad oggi"
+    "novaGoogleAnalyticsCards.pageViewsLineChartTitle": "Google Analytics™ - Visualizzazioni pagina fino ad oggi",
+    "novaGoogleAnalyticsCards.bounceRateCounterTitle": "Google Analytics™ - Frequenza di rimbalzo",
+    "novaGoogleAnalyticsCards.bounceRateLineChartTitle": "Google Analytics™ - Frequenza di rimbalzo fino ad oggi"
+
 }

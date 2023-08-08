@@ -6,7 +6,7 @@ use The3LabsTeam\NovaGoogleAnalyticsCards\Abstract\GoogleAnalyticsCounter;
 
 class BounceRateCounter extends GoogleAnalyticsCounter
 {
-    public $title = 'Bounce Rate';
+    public $title = 'novaGoogleAnalyticsCards.bounceRateCounterTitle';
 
     protected $metrics = 'bounceRate';
 }
