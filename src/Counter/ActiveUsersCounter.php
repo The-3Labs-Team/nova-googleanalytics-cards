@@ -6,7 +6,6 @@ use The3LabsTeam\NovaGoogleAnalyticsCards\Abstract\GoogleAnalyticsCounter;
 
 final class ActiveUsersCounter extends GoogleAnalyticsCounter
 {
-
     protected $title = 'novaGoogleAnalyticsCards.activeUsersCounterTitle';
 
     protected $metrics = 'activeUsers';
