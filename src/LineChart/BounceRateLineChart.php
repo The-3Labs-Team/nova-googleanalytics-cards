@@ -6,7 +6,7 @@ use The3LabsTeam\NovaGoogleAnalyticsCards\Abstract\GoogleAnalyticsLineChart;
 
 class BounceRateLineChart extends GoogleAnalyticsLineChart
 {
-    public $title = 'novaGoogleAnalyticsCards.bounceRateLineChartTitle';
+    public $title = 'nova-google-analytics-cards::messages.bounceRateLineChartTitle';
 
     protected $metrics = 'bounceRate';
 }

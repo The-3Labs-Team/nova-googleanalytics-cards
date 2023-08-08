@@ -1,8 +1,8 @@
 {
-    "novaGoogleAnalyticsCards.newUsersCounterTitle" : "Google Analytics™ - New users",
-    "novaGoogleAnalyticsCards.activeUsersCounterTitle": "Google Analytics™ - Active users",
-    "novaGoogleAnalyticsCards.pageViewsCounterTitle": "Google Analytics™ - Page views",
-    "novaGoogleAnalyticsCards.pageViewsLineChartTitle": "Google Analytics™ - Page views to date",
-    "novaGoogleAnalyticsCards.bounceRateCounterTitle": "Google Analytics™ - Bounce Rate",
-    "novaGoogleAnalyticsCards.bounceRateLineChartTitle": "Google Analytics™ - Bounce Rate to date"
+    "newUsersCounterTitle" : "Google Analytics™ - New users",
+    "activeUsersCounterTitle": "Google Analytics™ - Active users",
+    "pageViewsCounterTitle": "Google Analytics™ - Page views",
+    "pageViewsLineChartTitle": "Google Analytics™ - Page views to date",
+    "bounceRateCounterTitle": "Google Analytics™ - Bounce Rate",
+    "bounceRateLineChartTitle": "Google Analytics™ - Bounce Rate to date"
 }
