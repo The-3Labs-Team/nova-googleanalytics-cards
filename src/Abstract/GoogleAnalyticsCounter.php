@@ -19,17 +19,6 @@ class GoogleAnalyticsCounter extends Value
     }
 
     /**
-     * Return data from Google Analytics API
-     */
-    public function getData(NovaRequest $request, string $metrics): mixed
-    {
-        $analyticsData = Analytics::get(Period::days($request->range), [$metrics]);
-        $results = $analyticsData[0][$metrics];
-
-        return $results;
-    }
-
-    /**
      * Get the ranges available for the metric.
      *
      * @return array
@@ -40,10 +29,8 @@ class GoogleAnalyticsCounter extends Value
             7 => Nova::__('7 Days'),
             30 => Nova::__('30 Days'),
             60 => Nova::__('60 Days'),
-            365 => Nova::__('365 Days'),
-            'MTD' => Nova::__('Month To Date'),
-            'QTD' => Nova::__('Quarter To Date'),
-            'YTD' => Nova::__('Year To Date'),
+            90 => Nova::__('90 Days'),
+            365 => Nova::__('365 Days')
         ];
     }
 
@@ -73,5 +60,16 @@ class GoogleAnalyticsCounter extends Value
         }
 
         return $this->result($results)->format($format);
+    }
+
+    /**
+     * Return data from Google Analytics API
+     */
+    public function getData(NovaRequest $request, string $metrics): mixed
+    {
+        $analyticsData = Analytics::get(Period::days($request->range), [$metrics]);
+        $results = $analyticsData[0][$metrics];
+
+        return $results;
     }
 }
