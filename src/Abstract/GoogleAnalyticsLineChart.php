@@ -14,7 +14,7 @@ class GoogleAnalyticsLineChart extends Trend
 {
     public $name;
 
-    public function __construct(string $name = null)
+    public function __construct(?string $name = null)
     {
         parent::__construct();
         $this->name = $name ?? __($this->title);

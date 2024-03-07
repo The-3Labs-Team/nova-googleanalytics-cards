@@ -12,7 +12,7 @@ class GoogleAnalyticsCounter extends Value
 {
     public $name;
 
-    public function __construct(string $name = null)
+    public function __construct(?string $name = null)
     {
         parent::__construct();
         $this->name = $name ?? __($this->title);
@@ -30,7 +30,7 @@ class GoogleAnalyticsCounter extends Value
             30 => Nova::__('30 Days'),
             60 => Nova::__('60 Days'),
             90 => Nova::__('90 Days'),
-            365 => Nova::__('365 Days')
+            365 => Nova::__('365 Days'),
         ];
     }
 
